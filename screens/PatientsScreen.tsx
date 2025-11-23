@@ -1,3 +1,4 @@
+import BackButton from "components/BackButton";
 import { useState } from "react";
 import {
   View,
@@ -7,6 +8,7 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function PatientsScreen({ onBack, onSelectPatient }: any) {
   const [search, setSearch] = useState("");
@@ -17,7 +19,7 @@ export default function PatientsScreen({ onBack, onSelectPatient }: any) {
       name: "Ana Beatriz",
       age: 29,
       category: "Consulta Geral",
-      avatar: "https://i.pravatar.cc/150?img=1",
+      avatar: "https://i.pravatar.cc/150?img=8",
       history:
         "Paciente realiza acompanhamento desde 2020 com queixas de dor de cabeça e ansiedade.",
       notes: "Recomendada continuidade no acompanhamento psicológico.",
@@ -27,7 +29,7 @@ export default function PatientsScreen({ onBack, onSelectPatient }: any) {
       name: "João Pedro",
       age: 35,
       category: "Retorno",
-      avatar: "https://i.pravatar.cc/150?img=2",
+      avatar: "https://i.pravatar.cc/150?img=12",
       history:
         "Sem histórico grave. Acompanhamento pós-operatório simples.",
       notes: "Próximo retorno em 30 dias.",
@@ -37,11 +39,38 @@ export default function PatientsScreen({ onBack, onSelectPatient }: any) {
       name: "Carla Mendes",
       age: 22,
       category: "Pediatria",
-      avatar: "https://i.pravatar.cc/150?img=3",
+      avatar: "https://i.pravatar.cc/150?img=32",
       history:
         "Paciente desde a infância. Histórico de alergias respiratórias.",
       notes: "Avaliar necessidade de novo teste alérgico.",
     },
+    {
+      id: "4",
+      name: "Lucas Silva",
+      age: 40,
+      category: "Clínico Geral",
+      avatar: "https://i.pravatar.cc/150?img=50",
+      history: "Paciente com histórico de hipertensão controlada.",
+      notes: "Monitorar pressão semanalmente.",
+    },
+    {
+      id: "5",
+      name: "Bianca Rocha",
+      age: 19,
+      category: "Nutrição",
+      avatar: "https://i.pravatar.cc/150?img=24",
+      history: "Acompanhamento nutricional desde 2023.",
+      notes: "Reavaliar plano alimentar dia 12.",
+    },
+    {
+      id: "6",
+      name: "Bianca Rocha",
+      age: 19,
+      category: "Nutrição",
+      avatar: "https://i.pravatar.cc/150?img=24",
+      history: "Acompanhamento nutricional desde 2023.",
+      notes: "Reavaliar plano alimentar dia 12.",
+    }
   ];
 
   const filtered = patients.filter((p) =>
@@ -49,38 +78,47 @@ export default function PatientsScreen({ onBack, onSelectPatient }: any) {
   );
 
   return (
-    <View className="flex-1 bg-white p-5">
-      
-      <TouchableOpacity onPress={onBack} className="mb-4">
-        <Text className="text-blue-600 mt-8 font-semibold text-lg">← Voltar</Text>
-      </TouchableOpacity>
+    <View className="flex-1 bg-[#c8f1f7] px-5 pt-12">
 
-      <TextInput
-        className="w-full px-4 py-3 bg-gray-100 rounded-xl mb-4 border border-gray-300"
-        placeholder="Buscar paciente..."
-        value={search}
-        onChangeText={setSearch}
-      />
+      <BackButton onPress={onBack} />
+
+      <Text className="text-2xl font-bold text-emerald-400 mt-6 mb-4 ml-1">
+        Lista de Pacientes
+      </Text>
+
+      <View className="flex-row items-center bg-white rounded-2xl px-4  mb-6 shadow shadow-black/5 border border-gray-200">
+        <Ionicons name="search-outline" size={22} color="#4b5563" />
+        <TextInput
+          className="flex-1 ml-3 text-gray-700 text-base"
+          placeholder="Buscar paciente..."
+          placeholderTextColor="#9ca3af"
+          value={search}
+          onChangeText={setSearch}
+        />
+      </View>
 
       <FlatList
         data={filtered}
+        showsVerticalScrollIndicator={false}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <TouchableOpacity
-            onPress={() => onSelectPatient(item)}   // 👈 AGORA FUNCIONA!
-            className="flex-row items-center bg-gray-100 p-4 rounded-xl mb-3"
+            onPress={() => onSelectPatient(item)}
+            className="flex-row items-center bg-white p-4 rounded-2xl mb-4 shadow-sm border border-gray-200"
           >
             <Image
               source={{ uri: item.avatar }}
-              className="w-14 h-14 rounded-full mr-4"
+              className="w-16 h-16 rounded-full mr-4"
             />
 
             <View className="flex-1">
               <Text className="text-lg font-semibold text-gray-800">
                 {item.name}
               </Text>
-              <Text className="text-gray-500 text-sm">{item.category}</Text>
+              <Text className="text-gray-500">{item.category}</Text>
             </View>
+
+            <Ionicons name="chevron-forward" size={22} color="#999" />
           </TouchableOpacity>
         )}
       />

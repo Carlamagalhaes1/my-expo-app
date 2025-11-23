@@ -1,3 +1,4 @@
+import BackButton from "components/BackButton";
 import { View, Text, Image, ScrollView, TouchableOpacity } from "react-native";
 
 export default function PatientDetailsScreen({ patient, onBack }: any) {
@@ -7,7 +8,7 @@ export default function PatientDetailsScreen({ patient, onBack }: any) {
     <ScrollView className="flex-1 bg-white p-6">
 
       <TouchableOpacity onPress={onBack} className="mb-4">
-        <Text className="text-blue-600 text-lg mt-8 font-semibold">← Voltar</Text>
+        <BackButton onPress={onBack} />
       </TouchableOpacity>
 
       <View className="items-center mb-6">

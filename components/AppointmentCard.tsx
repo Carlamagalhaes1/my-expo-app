@@ -6,7 +6,7 @@ type Props = {
     id: string;
     patientName: string;
     specialty: string;
-    time: string; // ex: "09:30"
+    time: string; 
     avatar?: string;
   };
   onPress?: () => void;
