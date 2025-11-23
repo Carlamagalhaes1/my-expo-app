@@ -82,7 +82,7 @@ export default function PatientsScreen({ onBack, onSelectPatient }: any) {
 
       <BackButton onPress={onBack} />
 
-      <Text className="text-2xl font-bold text-emerald-400 mt-6 mb-4 ml-1">
+      <Text className="text-2xl font-bold text-slate-700 mt-6 mb-4 ml-1">
         Lista de Pacientes
       </Text>
 

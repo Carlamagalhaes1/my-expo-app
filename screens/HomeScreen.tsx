@@ -16,7 +16,7 @@ export default function HomeScreen() {
         </View>
 
         <View>
-          <Text className="text-2xl font-bold text-gray-800">
+          <Text className="text-2xl font-bold text-slate-700">
             Olá, {userName}!
           </Text>
           <Text className="text-gray-600 text-sm">
@@ -29,7 +29,7 @@ export default function HomeScreen() {
         Atalhos rápidos
       </Text>
 
-      <SectionCard
+      <SectionCard 
         title="Lista de Pacientes"
         subtitle="Veja todos os pacientes cadastrados"
         icon="people-outline"
