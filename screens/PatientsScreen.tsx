@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
-import Header from "../components/Header"; // ⬅️ novo header reutilizável
+import Header from "../components/Header"; 
 
 export default function PatientsScreen({ onBack, onSelectPatient }: any) {
   const [search, setSearch] = useState("");
@@ -20,7 +20,7 @@ export default function PatientsScreen({ onBack, onSelectPatient }: any) {
       name: "Ana Beatriz",
       age: 29,
       category: "Consulta Geral",
-      avatar: "https://i.pravatar.cc/150?img=8",
+      avatar: "https://i.pravatar.cc/150?img=5",
       history:
         "Paciente realiza acompanhamento desde 2020 com queixas de dor de cabeça e ansiedade.",
       notes: "Recomendada continuidade no acompanhamento psicológico.",
@@ -49,7 +49,7 @@ export default function PatientsScreen({ onBack, onSelectPatient }: any) {
       name: "Lucas Silva",
       age: 40,
       category: "Clínico Geral",
-      avatar: "https://i.pravatar.cc/150?img=50",
+      avatar: "https://i.pravatar.cc/150?img=52",
       history: "Paciente com histórico de hipertensão controlada.",
       notes: "Monitorar pressão semanalmente.",
     },
@@ -58,7 +58,7 @@ export default function PatientsScreen({ onBack, onSelectPatient }: any) {
       name: "Bianca Rocha",
       age: 19,
       category: "Nutrição",
-      avatar: "https://i.pravatar.cc/150?img=24",
+      avatar: "https://i.pravatar.cc/150?img=26",
       history: "Acompanhamento nutricional desde 2023.",
       notes: "Reavaliar plano alimentar dia 12.",
     },
@@ -67,7 +67,7 @@ export default function PatientsScreen({ onBack, onSelectPatient }: any) {
       name: "Mariana Costa",
       age: 31,
       category: "Psicologia",
-      avatar: "https://i.pravatar.cc/150?img=47",
+      avatar: "https://i.pravatar.cc/150?img=48",
       history: "Acompanhamento psicológico desde 2022.",
       notes: "Retorno agendado para próxima semana.",
     },
@@ -80,7 +80,6 @@ export default function PatientsScreen({ onBack, onSelectPatient }: any) {
   return (
     <View className="flex-1 bg-[#c8f1f7] px-5 pt-12">
 
-      {/* ⭐ HEADER REUTILIZÁVEL */}
       <Header
         title="Lista de Pacientes"
         icon="people-sharp"

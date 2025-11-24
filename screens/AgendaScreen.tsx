@@ -64,7 +64,7 @@ export default function AgendaScreen({ onBack }: { onBack: () => void }) {
   return (
     <View className="flex-1 bg-[#c8f1f7] px-5 pt-12">
       <Header title="Agenda de Consultas" icon="calendar-outline" onBack={onBack} />
-      <Text className="text-md font-bold text-slate-600 mt-2  "> Pesquisar por: </Text>
+      <Text className="text-md font-bold text-slate-600 mt-2   "> Pesquisar por: </Text>
       <View className="flex-row my-1 gap-2">
         {["day", "week"].map((mode) => (
           <TouchableOpacity
