@@ -8,7 +8,7 @@ export default function HomeScreen() {
   const userName = "Carla"; 
 
   return (
-    <View className="flex-1 bg-[#c8f1f7] px-6 pt-20">
+    <View className="flex-1 bg-[#c8f1f7] px-5 pt-20">
       
       <View className="flex-row items-center mb-10">
         <View className="w-12 h-12 bg-white rounded-full shadow items-center justify-center mr-3">

@@ -1,14 +1,15 @@
-import BackButton from "components/BackButton";
 import { useState } from "react";
 import {
   View,
-  Text,
   TextInput,
   FlatList,
   Image,
   TouchableOpacity,
+  Text,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+
+import Header from "../components/Header"; // ⬅️ novo header reutilizável
 
 export default function PatientsScreen({ onBack, onSelectPatient }: any) {
   const [search, setSearch] = useState("");
@@ -30,8 +31,7 @@ export default function PatientsScreen({ onBack, onSelectPatient }: any) {
       age: 35,
       category: "Retorno",
       avatar: "https://i.pravatar.cc/150?img=12",
-      history:
-        "Sem histórico grave. Acompanhamento pós-operatório simples.",
+      history: "Sem histórico grave. Acompanhamento pós-operatório simples.",
       notes: "Próximo retorno em 30 dias.",
     },
     {
@@ -64,13 +64,13 @@ export default function PatientsScreen({ onBack, onSelectPatient }: any) {
     },
     {
       id: "6",
-      name: "Bianca Rocha",
-      age: 19,
-      category: "Nutrição",
-      avatar: "https://i.pravatar.cc/150?img=24",
-      history: "Acompanhamento nutricional desde 2023.",
-      notes: "Reavaliar plano alimentar dia 12.",
-    }
+      name: "Mariana Costa",
+      age: 31,
+      category: "Psicologia",
+      avatar: "https://i.pravatar.cc/150?img=47",
+      history: "Acompanhamento psicológico desde 2022.",
+      notes: "Retorno agendado para próxima semana.",
+    },
   ];
 
   const filtered = patients.filter((p) =>
@@ -80,16 +80,18 @@ export default function PatientsScreen({ onBack, onSelectPatient }: any) {
   return (
     <View className="flex-1 bg-[#c8f1f7] px-5 pt-12">
 
-      <BackButton onPress={onBack} />
+      {/* ⭐ HEADER REUTILIZÁVEL */}
+      <Header
+        title="Lista de Pacientes"
+        icon="people-sharp"
+        onBack={onBack}
+      />
 
-      <Text className="text-2xl font-bold text-slate-700 mt-6 mb-4 ml-1">
-        Lista de Pacientes
-      </Text>
-
-      <View className="flex-row items-center bg-white rounded-2xl px-4  mb-6 shadow shadow-black/5 border border-gray-200">
+      {/* 🔍 Barra de busca */}
+      <View className="flex-row items-center bg-white rounded-2xl px-4 mb-6 shadow-sm border border-gray-200">
         <Ionicons name="search-outline" size={22} color="#4b5563" />
         <TextInput
-          className="flex-1 ml-3 text-gray-700 text-base"
+          className="flex-1 ml-3 py-3 text-gray-700 text-base"
           placeholder="Buscar paciente..."
           placeholderTextColor="#9ca3af"
           value={search}
@@ -97,6 +99,7 @@ export default function PatientsScreen({ onBack, onSelectPatient }: any) {
         />
       </View>
 
+      {/* 📜 Lista de pacientes */}
       <FlatList
         data={filtered}
         showsVerticalScrollIndicator={false}

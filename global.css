@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer base {
+  Text {
+    font-family: "Inter_400Regular";
+  }
+  .font-semibold {
+    font-family: "Inter_600SemiBold";
+  }
+  .font-bold {
+    font-family: "Inter_700Bold";
+  }
+}

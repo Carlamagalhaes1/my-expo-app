@@ -1,45 +1,49 @@
 import BackButton from "components/BackButton";
-import { View, Text, Image, ScrollView, TouchableOpacity } from "react-native";
+import { View, Text, Image, ScrollView} from "react-native";
 
 export default function PatientDetailsScreen({ patient, onBack }: any) {
   if (!patient) return null;
 
   return (
-    <ScrollView className="flex-1 bg-white p-6">
+    <ScrollView className="flex-1 bg-[#c8f1f7] p-6 ">
 
-      <TouchableOpacity onPress={onBack} className="mb-4">
-        <BackButton onPress={onBack} />
-      </TouchableOpacity>
-
-      <View className="items-center mb-6">
-        <Image
-          source={{ uri: patient.avatar }}
-          className="w-32 h-32 rounded-full"
-        />
+      <View className="mb-4">
+        <BackButton  onPress={onBack}  />
       </View>
 
-      <Text className="text-3xl font-bold text-gray-800 mb-1 text-center">
-        {patient.name}
-      </Text>
+      <View className="items-center mb-6">
+        <View className="w-36 h-36 rounded-full bg-white shadow-md items-center justify-center">
+          <Image
+            source={{ uri: patient.avatar }}
+            className="w-32 h-32 rounded-full"
+          />
+        </View>
 
-      <Text className="text-gray-500 text-lg text-center mb-6">
-        {patient.age} anos
-      </Text>
-
-      <View className="mb-6">
-        <Text className="text-xl font-semibold text-gray-800 mb-2">
-          Histórico Clínico
+        <Text className="text-3xl font-bold text-slate-800 mt-4">
+          {patient.name}
         </Text>
-        <Text className="text-gray-600 leading-relaxed">
+
+        <Text className="text-slate-500 text-lg">{patient.age} anos</Text>
+      </View>
+
+      {/* Histórico Clínico */}
+      <View className="bg-white p-5  rounded-2xl shadow mb-5">
+        <Text className="text-xl font-bold text-slate-800 mb-3">
+          Histórico Clínico:
+        </Text>
+
+        <Text className="text-slate-600 leading-relaxed">
           {patient.history}
         </Text>
       </View>
 
-      <View className="mb-10">
-        <Text className="text-xl font-semibold text-gray-800 mb-2">
-          Observações
+      {/* Observações */}
+      <View className="bg-white p-5 rounded-2xl shadow mb-10">
+        <Text className="text-xl font-bold text-slate-800 mb-3">
+          Observações:
         </Text>
-        <Text className="text-gray-600 leading-relaxed">
+
+        <Text className="text-slate-600 leading-relaxed">
           {patient.notes}
         </Text>
       </View>

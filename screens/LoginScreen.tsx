@@ -50,8 +50,8 @@ export default function LoginScreen({ onLogin }: { onLogin: () => void }) {
             className="w-[100px] h-[100px]"
           />
         </View>
-        <Text className="text-2xl text-center font-bold text-gray-800 mb-6">
-          Login
+        <Text className="text-2xl text-center font-bold text-gray-700 mb-6">
+          Faça seu Login
         </Text>
 
         <View className="w-full mb-4">
