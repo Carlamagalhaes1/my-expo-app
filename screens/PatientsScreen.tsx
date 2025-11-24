@@ -69,7 +69,7 @@ export default function PatientsScreen({ onBack, onSelectPatient }: any) {
       category: "Psicologia",
       avatar: "https://i.pravatar.cc/150?img=48",
       history: "Acompanhamento psicológico desde 2022.",
-      notes: "Retorno agendado para próxima semana.",
+      notes: "Retorno agendado para próxima semana..",
     },
   ];
 
