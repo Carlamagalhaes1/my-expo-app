@@ -108,3 +108,7 @@ npx expo start
 
 -   **Email:** `admin@teste.com`\
 -   **Senha:** `123456`
+  
+## Link do vídeo do Drive de funcionaento do app
+https://drive.google.com/drive/folders/1RZQp1kAlzUOqwBDgKBc0rRaYpfKTqvy7?usp=drive_link
+
