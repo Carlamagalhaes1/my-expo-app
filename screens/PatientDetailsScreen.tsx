@@ -26,7 +26,6 @@ export default function PatientDetailsScreen({ patient, onBack }: any) {
         <Text className="text-slate-500 text-lg">{patient.age} anos</Text>
       </View>
 
-      {/* Histórico Clínico */}
       <View className="bg-white p-5  rounded-2xl shadow mb-5">
         <Text className="text-xl font-bold text-slate-800 mb-3">
           Histórico Clínico:
@@ -37,7 +36,6 @@ export default function PatientDetailsScreen({ patient, onBack }: any) {
         </Text>
       </View>
 
-      {/* Observações */}
       <View className="bg-white p-5 rounded-2xl shadow mb-10">
         <Text className="text-xl font-bold text-slate-800 mb-3">
           Observações:

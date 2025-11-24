@@ -85,8 +85,6 @@ export default function PatientsScreen({ onBack, onSelectPatient }: any) {
         icon="people-sharp"
         onBack={onBack}
       />
-
-      {/* 🔍 Barra de busca */}
       <View className="flex-row items-center bg-white rounded-2xl px-4 mb-6 shadow-sm border border-gray-200">
         <Ionicons name="search-outline" size={22} color="#4b5563" />
         <TextInput
@@ -97,8 +95,7 @@ export default function PatientsScreen({ onBack, onSelectPatient }: any) {
           onChangeText={setSearch}
         />
       </View>
-
-      {/* 📜 Lista de pacientes */}
+      
       <FlatList
         data={filtered}
         showsVerticalScrollIndicator={false}
