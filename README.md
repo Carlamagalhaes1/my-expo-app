@@ -21,7 +21,7 @@ de fichas detalhadas --- tudo com um design limpo e experiência fluida.
 
 ------------------------------------------------------------------------
 
-## 🧰 **Tecnologias Utilizadas**
+## 🧰 **Oque foi usado:**
 
 -   **React Native (Expo)**
 -   **TypeScript**
