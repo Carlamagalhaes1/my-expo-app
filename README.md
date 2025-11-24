@@ -1,93 +1,102 @@
-# ClinicApp — Sistema de Gestão Clínica
+📱 ClinicApp — Sistema de Gestão Clínica
+
 O ClinicApp é um aplicativo mobile moderno para gestão clínica, permitindo acesso rápido a pacientes, agenda de consultas e visualização de fichas detalhadas — tudo com um design limpo e experiência fluida.
 
+🚀 Funcionalidades
 
----
+✔️ Login funcional com validação
 
-## 🚀 Funcionalidades
+✔️ Home moderna com atalhos rápidos
 
-- ✔️ Login funcional com validação
-- ✔️ Home moderna com atalhos rápidos
-- ✔️ Lista de pacientes com busca e avatar
-- ✔️ Ficha completa do paciente
-- ✔️ Layout moderno  
-- ✔️ Agenda diária e semanal
-- ✔️ Navegação usando Zustand (estado global)
-- ✔️ Scroll em listas (FlatList)
-- ✔️ Componentes reutilizávei
-- ✔️ Design clean utilizando Tailwind + NativeWind
+✔️ Lista de pacientes com busca e avatar
 
----
+✔️ Ficha completa do paciente
 
-## 🧰 Oque foi usado
+✔️ Layout moderno e intuitivo
 
-- **React Native (Expo)**  
-- **TypeScript**  
-- **NativeWind / TailwindCSS**
-- **Zustand — gerenciamento global de estado**
-- **Date-FNS — manipulação de datas**
-- **Expo Vector Icons**
-  
+✔️ Agenda diária e semanal
 
----
+✔️ Navegação e estado global com Zustand
 
-## 📁 Estrutura do Projeto
+✔️ Scroll otimizado com FlatList
 
+✔️ Componentes reutilizáveis
+
+✔️ Design clean usando Tailwind + NativeWind
+
+🧰 Tecnologias Utilizadas
+
+React Native (Expo)
+
+TypeScript
+
+NativeWind / TailwindCSS
+
+Zustand — gerenciamento global de estado
+
+Date-FNS — manipulação de datas
+
+Expo Vector Icons
+
+📁 Estrutura do Projeto
 CLINICAPP/my-expo-app
-|├── assets/
+│
+├── assets/
 │   └── logo/clinicApp.png
-|
-|── components/
+│
+├── components/
 │   ├── Header.tsx
 │   ├── BackButton.tsx
 │   ├── SectionCard.tsx
 │   └── AppointmentCard.tsx
-|
-|├── screens/
+│
+├── screens/
 │   ├── AgendaScreen.tsx
 │   ├── HomeScreen.tsx
 │   ├── LoginScreen.tsx
 │   ├── PatientDetailsScreen.tsx
 │   └── PatientsScreen.tsx
-|
-│── App.tsx
-│── global.css
 │
+├── store/
+│   └── useAppStore.ts  ← Zustand
 │
-└── store/
-    └── useAppStore.ts  ← Zustand
+├── App.tsx
+└── global.css
+
+📝 Como Funciona
+
+O usuário faz login com email e senha.
+
+A home exibe atalhos rápidos para agenda e pacientes.
+
+A lista de pacientes permite busca dinâmica com avatar.
+
+É possível abrir a ficha completa do paciente.
+
+A agenda permite visualizar compromissos por dia ou semana.
+
+Tudo utilizando Zustand para estado global e NativeWind para estilização.
+
+🖥️ Como Rodar o Projeto
+1️⃣ Clonar o repositório
+git clone https://github.com/Carlamagalhaes1/my-expo-app.git
+cd my-expo-app
+code .
+
+2️⃣ Instalar dependências
+npm install
+
+3️⃣ Instalar dependências do Expo
+npx expo install react-native-safe-area-context react-native-screens react-native-reanimated
+
+4️⃣ Rodar
+npx expo start
 
 
----
+📲 Abra o Expo Go no celular e escaneie o QR Code.
 
-## 📝 Como Funciona
+🔐 Credenciais padrão de login
 
-1. O usuário preenche os dados do **prestador**, **cliente** e **impostos**.  
-2. É possível adicionar quantos itens de serviço forem necessários.  
-3. O sistema soma automaticamente o valor total dos itens.  
-4. Os percentuais dos impostos são aplicados de forma automática.  
-5. A NFS-e completa é exibida na tela.  
-6. É possível  **limpar tudo**.
+Email: admin@teste.com
 
----
-
-## 🖨️ Como rodar:
-
-1. 1️⃣ Clonar o repositório
-   -git clone https://github.com/Carlamagalhaes1/my-expo-app.git
-   -cd my-expo-app
-    -code . (para abrir no vscode)
-2.2️⃣ Instalar dependências
-   -npm install
-3.3️⃣ Instalar dependências do Expo
-   -npx expo install react-native-safe-area-context react-native-screens react-native-reanimated
-4.4️⃣ Rodar o projeto
-   -npx expo start
-
-Abra o Expo Go no celular → Escaneie o QRCode.
-- Credenciais padrão para fazer login **email === "admin@teste.com"** && **senha === "123456"**
-
----
-
-
-
+Senha: 123456
